@@ -1,0 +1,13 @@
+name: Create Asana PR Attachment
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+
+jobs:
+  create-asana-attachment-job:
+    uses: digital-stronghold/tds-github-reusable-workflows/.github/workflows/asana-create-attachment.yml@main
+    secrets:
+      ASANA_SECRET: ${{ secrets.ASANA_SECRET }}

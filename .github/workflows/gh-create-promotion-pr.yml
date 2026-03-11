@@ -1,0 +1,17 @@
+name: Re-Create Promotion PR to Master/Main
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - dev
+      - staging
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  create-promotion-pr:
+    if: github.event.pull_request.merged == true
+    uses: digital-stronghold/tds-github-reusable-workflows/.github/workflows/gh-create-promotion-pr.yml@main
