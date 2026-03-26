@@ -1,0 +1,13 @@
+name: Validate PR Title
+
+on:
+  pull_request:
+    types:
+      - opened
+      - edited
+      - synchronize
+      - reopened
+
+jobs:
+  validate-pr-title:
+    uses: digital-stronghold/tds-github-reusable-workflows/.github/workflows/validate-pr-title.yml@main
