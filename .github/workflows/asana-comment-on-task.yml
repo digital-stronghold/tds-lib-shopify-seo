@@ -9,6 +9,7 @@ on:
 
 jobs:
   create-comment-in-asana-task-job:
+    if: ${{ github.actor != 'dependabot[bot]' }}
     uses: digital-stronghold/tds-github-reusable-workflows/.github/workflows/asana-comment-on-task.yml@main
     secrets:
       ASANA_SECRET: ${{ secrets.ASANA_SECRET }}
