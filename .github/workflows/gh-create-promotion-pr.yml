@@ -15,3 +15,10 @@ jobs:
   create-promotion-pr:
     if: github.event.pull_request.merged == true
     uses: digital-stronghold/tds-github-reusable-workflows/.github/workflows/gh-create-promotion-pr.yml@main
+    # with:
+    #   preview_label: Production
+    #   theme_id_dev: ${{ vars.THEME_ID_DEV }}
+    #   theme_id_staging: ${{ vars.THEME_ID_STAGING }}
+    #   theme_id_production: ${{ vars.THEME_ID_PRODUCTION }}
+    # secrets:
+    #   SHOPIFY_PROMOTION_PREVIEW_STORE: ${{ secrets.SHOPIFY_STORE_URL }}
